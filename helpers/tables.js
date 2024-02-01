@@ -12,15 +12,31 @@ const db = mysql.createConnection(
     console.log(`Connected to the brewery_db database.`)
 );
 
+db.connect(function(err) {
+    if (err) throw err
+});
+
 class Table {
-    constructor(tableName) {
+    constructor(tableName, db) {
         this.tableName = tableName;
+        this.db = db
     }
 
     // CRUD
     // Because mysql2 is callback function based, supply a cb function argument to handle what happens next.
-    findAllData(cb) {
-        return db.query('SELECT * FROM ??', this.tableName, cb)
+    findAllData() {
+        return this.db.query('SELECT * FROM ?', this.tableName, (err, res) =>{
+            if(err) throw err
+            console.table(res)
+            init(initQ)
+        })
+    }
+    findAllDepartments(){
+        db.query("SELECT * FROM departments", (err, res) => {
+            if (err) throw err
+            console.table(res)
+           
+        })
     }
 
     findOneByPrimary(id, cb) {
@@ -32,4 +48,4 @@ class Table {
     }
 }
 
-module.exports = Table;
+module.exports = db;

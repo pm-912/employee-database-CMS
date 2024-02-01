@@ -10,11 +10,46 @@ const initQ = [
             "View all Departments",
             "View all Roles",
             "View all Employees",
+            "Create new Department",
             "Create new Role",
             "Create new Employee",
             "Update an Employee's Role"
         ]
     }
+];
+
+const deptQs = [
+    {
+        //content
+    },
+    {
+        //content
+    },
+    {
+        //content
+    },
+]
+const roleQs = [
+    {
+        //content
+    },
+    {
+        //content
+    },
+    {
+        //content
+    },
+]
+const empQs = [
+    {
+        //content
+    },
+    {
+        //content
+    },
+    {
+        //content
+    },
 ]
 
 function userRes(response) {
@@ -25,10 +60,12 @@ function userRes(response) {
             return new RoleTbl
         case 'View all Employees':
             return new EmpTbl
+        case 'Create new Department':
+            init(deptQs);
         case 'Create new Role':
-            createRole();
+            init(roleQs);
         case 'Create new Employee':
-            createEmp();
+            init(empQs);
         case "Update an Employee's Role":
             updateEmp();
     }

@@ -12,7 +12,6 @@ VALUES ("Brewer", 60000, 1),
 ("Lab Technician", 50000, 2),
 ("Keg Washer", 50000, 3),
 ("Packaging Lead", 50000, 3),
-("Team Champion", 80000, 4);
 
 INSERT INTO employees (first_name, last_name, role_id)
 VALUES ("Justin", "Goomba", 2),

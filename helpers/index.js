@@ -20,37 +20,53 @@ const initQ = [
 
 const deptQs = [
     {
-        //content
-    },
-    {
-        //content
-    },
-    {
-        //content
-    },
+        message: "Please enter a name for the department",
+        name: "dept"
+    }
 ]
 const roleQs = [
     {
-        //content
+        message: "Please a name for the new role",
+        name: "role"
     },
     {
-        //content
+        message: "Please enter a salary for the new role",
+        name: "salary"
     },
     {
-        //content
+        message: "What department should this role be assigned to?",
+        name: "assigndep"
     },
 ]
 const empQs = [
     {
-        //content
+        message: "What is the employee's first name?",
+        name: "first"
     },
     {
-        //content
+        message: "What is the employee's last name?",
+        name: "last"
     },
     {
-        //content
+        message: "What is the employee's role?",
+        name: "emprole",
+        type: "choices",
+        choices: ["Brewer", "Head Brewer", "Cellar Operator", "Canning Line Operator", "Lab Technician", "Keg Washer", "Packaging Lead"]
+    },
+    {
+        message: "Who is that employee's manager?",
+        name: "manager",
+        type: "choices",
+        choices: ["Justin Goomba", "Jonathan Florita", "Elijah Millar", "Ethan Schmeethan"]
     },
 ]
+
+function createNew(qarray) {
+    inquirer.prompt(qarray)
+        .then ((responses) => {
+            //new db query insert into
+        })
+}
 
 function userRes(response) {
     switch (response) {
@@ -61,11 +77,11 @@ function userRes(response) {
         case 'View all Employees':
             return new EmpTbl
         case 'Create new Department':
-            init(deptQs);
+            createNew(deptQs);
         case 'Create new Role':
-            init(roleQs);
+            createNew(roleQs);
         case 'Create new Employee':
-            init(empQs);
+            createNew(empQs);
         case "Update an Employee's Role":
             updateEmp();
     }

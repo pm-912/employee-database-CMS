@@ -1,6 +1,6 @@
 
 const inquirer = require("inquirer");
-const db = require("./tables")
+const db = require("./connections")
 
 const initQ = [
     {
@@ -106,7 +106,12 @@ function viewRoles() {
     })
 }
 function viewEmployees() {
-    db.query("SELECT * FROM employees", (err, res) => {
+    db.query(`SELECT first_name, last_name, title, manager_id, salary, dept_name
+    FROM roles
+    JOIN departments
+    ON roles.dept_id = departments.id
+    JOIN employees
+    ON roles.id = employees.role_id;`, (err, res) => {
         if (err) throw err
         console.table(res)
         init(initQ)
@@ -128,7 +133,6 @@ function createDepartment() {
 function createRole() {
     inquirer.prompt(roleQs)
         .then((responses) => {
-            //new db query insert into
             db.query("INSERT INTO roles SET ?",
                 {
                     title: responses.role,
@@ -143,18 +147,25 @@ function createRole() {
 function createEmp() {
     inquirer.prompt(empQs)
         .then((responses) => {
-            //new db query insert into
             db.query("INSERT INTO employees SET ?",
                 {
                     first_name: responses.first,
                     last_name: responses.last,
                     role_id: responses.emprole,
+                    manager_id: responses.manager
                 }
             )
             init(initQ)
         })
 }
 
+function updateEmp() {
+    inquirer.prompt(updateQs)
+        .then((responses) => {
+            db.query("") // select * from ?? where id = x
+            //db query 
+        })
+}
 
 function init(question) {
     inquirer.prompt(question)

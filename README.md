@@ -10,13 +10,13 @@
   6.[Contact Info](#contact)<br>
 
 ## Description ##
-  Content Management System for an employee database
+  Content Management System for an employee database. The command line application lets the user view tables of data for departments, roles, and employees, as well as creating new departments, roles, and employees. The application lets you update employee data too.
 
 ## Usage ##
-  
+  The application utilizes node, inquirer, and mysql. The command line is used to interact with the application, loading into the command line prompts the user with a question of what they'd like to do: either view a table or add a new value to a table. 
   
 ## Relevant Media ##
-  [A video demonstration of the application]()
+  [A video demonstration of the application](https://drive.google.com/file/d/1DbPes4W3MTACDmIszZwBDmfKR8QFeFJV/view)
 
 ## Installation ##
   
@@ -27,7 +27,7 @@
   [MIT License](https://opensource.org/licenses/MIT)
 
 ## Works Cited ##
-  Webdocs from MDN, W3Schools, Node.js
+  Tutor sessions, mysql webdocs, xpert learning assistant
 
 ## Contributing
   Reach out me if you'd like to contribute!

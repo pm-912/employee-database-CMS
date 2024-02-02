@@ -16,7 +16,7 @@
   The application utilizes node, inquirer, and mysql. The command line is used to interact with the application, loading into the command line prompts the user with a question of what they'd like to do: either view a table or add a new value to a table. 
   
 ## Relevant Media ##
-  [A video demonstration of the application]()
+  [A video demonstration of the application](https://drive.google.com/file/d/1DbPes4W3MTACDmIszZwBDmfKR8QFeFJV/view)
 
 ## Installation ##
   
